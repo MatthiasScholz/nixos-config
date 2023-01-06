@@ -12,7 +12,7 @@
 
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
-  home-manager.users.YourUserName = { pkgs, ... }: {
+  home-manager.users.mat = { pkgs, ... }: {
 
     stateVersion = "22.05"; # read below
 
