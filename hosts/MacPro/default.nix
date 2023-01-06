@@ -56,13 +56,13 @@
       "hashicorp/tap"
       "instrumenta/instrumenta"  # conftest 
       "warrensbox/tap"           # tfswitch
-    ]
+    ];
 
     brews = [
       # testing taps
       "restish"
       "danielgtaylor/restish/restish"
-    ]
+    ];
 
 
     casks = [
