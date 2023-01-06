@@ -15,8 +15,8 @@
       darwin.inputs.nixpkgs.follows = "nixpkgs"; # ...
 
       ## Emacs
-      emacs-overlay.url = "github:nix-community/emacs-overlay";
-      emacs-overlay.inputs.nixpkgs.follows = "nixpkgs";
+      # FIXME NOT WORKING emacs-overlay.url = "github:nix-community/emacs-overlay";
+      # FIXME NOT WORKING emacs-overlay.inputs.nixpkgs.follows = "nixpkgs";
   };
   
   # add the inputs declared above to the argument attribute set
@@ -28,7 +28,7 @@
       modules = [ home-manager.darwinModules.home-manager ./hosts/MacPro/default.nix]; # will be important later
     };
 
-    
+
 
 
   };
