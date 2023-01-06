@@ -58,12 +58,45 @@
       "warrensbox/tap"           # tfswitch
     ];
 
+    # TODO organize via topics
     brews = [
-      # testing taps
+      "aws-shell"
+      "awscli"
+      "awslogs"
+      "balena-cli"
+      "coreutils"
+      "cfssl"
+      "colima"
+      "conftest"
+      "go"
+      "dive"
+      "git"
+      "gopls"
+      "imagemagick"
+      "jq"
+      "poetry"
+      "ripgrep"
+      "saml2aws"
+      "shellcheck"
+      "socat"
+      "sops"
+      "terraform-docs"
+      "tfenv"
+      "tflint"
+      "the_platinum_searcher"
+      "tree"
+      "yamllint"
+      "sm"
+      "summon"
+      "summon-aws-secrets"
       "restish"
-      "danielgtaylor/restish/restish"
+      "earthly"
+      "gossm"
+      "packer"
+      "terraform-ls"
+      "awstools"
+      "tfswitch"
     ];
-
 
     casks = [
       "1password"
