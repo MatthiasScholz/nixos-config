@@ -1,4 +1,7 @@
 host ?= MacPro
+pull:
+	git pull
+
 build:
 	$(info Build Darwin Configuration)
 	nix build ".#darwinConfigurations.$(host).system" --extra-experimental-features "nix-command flakes"
@@ -13,3 +16,4 @@ darwin-rebuild:
 	./result/sw/bin/darwin-rebuild switch --flake .
 
 setup: build darwin-prepare darwin-rebuild
+upgrade: pull build darwin-rebuild 
