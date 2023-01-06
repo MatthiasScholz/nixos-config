@@ -35,7 +35,10 @@
   # The homebrew module lets you install software from brew.sh declaratively
   homebrew = {
     enable = true;
-    autoUpdate = true;
+    onActivation = {
+      autoUpdate = true;
+      upgrade = true;  # upgrade outdated formulae and apps
+    };
     # updates homebrew packages on activation,
     # can make darwin-rebuild much slower (otherwise i'd forget to do it ever though)
     casks = [
