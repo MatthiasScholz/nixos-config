@@ -15,5 +15,8 @@ darwin-rebuild:
 	$(info Install Darwin Configuration in the system)
 	./result/sw/bin/darwin-rebuild switch --flake .
 
+setup-prerequistes:
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
 setup: build darwin-prepare darwin-rebuild
 upgrade: pull build darwin-rebuild 
