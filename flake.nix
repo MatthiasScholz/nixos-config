@@ -13,6 +13,10 @@
       # nix will normally use the nixpkgs defined in home-managers inputs, we only want one copy of nixpkgs though
       darwin.url = "github:lnl7/nix-darwin";
       darwin.inputs.nixpkgs.follows = "nixpkgs"; # ...
+
+      ## Emacs
+      emacs-overlay.url = "github:nix-community/emacs-overlay";
+      emacs-overlay.inputs.nixpkgs.follows = "nixpkgs";
   };
   
   # add the inputs declared above to the argument attribute set
@@ -23,5 +27,9 @@
       system = "x86_64-darwin";
       modules = [ home-manager.darwinModules.home-manager ./hosts/MacPro/default.nix]; # will be important later
     };
+
+    
+
+
   };
 }
