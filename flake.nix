@@ -3,8 +3,8 @@
 
   inputs = {
       # stable
-      nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-22.05-darwin";
-      home-manager.url = "github:nix-community/home-manager/release-22.05";
+      nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-22.11-darwin";
+      home-manager.url = "github:nix-community/home-manager/release-22.11";
       # most recent
       #nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
       #home-manager.url = "github:nix-community/home-manager";

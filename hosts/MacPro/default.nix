@@ -14,7 +14,7 @@
   home-manager.useUserPackages = true;
   home-manager.users.mat = { pkgs, ... }: {
 
-    home.stateVersion = "22.05";
+    home.stateVersion = "22.11";
 
     programs.tmux = { # tmux configuration, for example
       enable = true;
