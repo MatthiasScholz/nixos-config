@@ -5,6 +5,7 @@ disk:
 	$(disko) -- -m create $(conf)
 	$(info mount the disk layout)
 	$(disko) -- -m mount $(conf)
+	mount | grep btrfs
 
 docs:
 	open https://bmcgee.ie/posts/2022/12/setting-up-my-new-laptop-nix-style/
