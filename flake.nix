@@ -2,6 +2,7 @@
   description = "MacOS basics";
 
   inputs = {
+      # TODO how to make OS independent?
       # stable
       nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-22.11-darwin";
       home-manager.url = "github:nix-community/home-manager/release-22.11";
