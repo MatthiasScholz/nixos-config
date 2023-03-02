@@ -1,8 +1,8 @@
-{
+{ disks ? [ "/dev/sda" ], ... }: {
   disk = {
     mx500 = {
       type = "disk";
-      device = "/dev/sda";
+      device = builtins.elemAt disks 0;
       content = {
         type = "table";
         format = "gpt";
