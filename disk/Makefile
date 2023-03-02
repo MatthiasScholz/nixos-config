@@ -1,5 +1,5 @@
 conf ?= ./x230-luks-btrfs.nix
-disko := nix run github:nix-community/disko --no-write-lock-file
+disko := nix run github:nix-community/disko --no-write-lock-file --extra-experimental-feature nix-command --extra-experimental-feature flakes
 disk:
 	$(info create the disk layout)
 	$(disko) -- -m create $(conf)
