@@ -1,5 +1,5 @@
-conf ?= ./x230-luks-btrfs.nix
-disko := nix run github:nix-community/disko --no-write-lock-file --extra-experimental-feature nix-command --extra-experimental-feature flakes
+conf ?= ./luks-btrfs.nix
+disko := nix run github:nix-community/disko --no-write-lock-file --extra-experimental-features nix-command --extra-experimental-features flakes
 disk:
 	$(info run as root: `sudo su`)
 	$(info create the disk layout)
