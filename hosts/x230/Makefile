@@ -2,33 +2,28 @@ conf ?= ./luks-btrfs.nix
 disko := nix run github:nix-community/disko --no-write-lock-file --extra-experimental-features nix-command --extra-experimental-features flakes
 disk:
 	$(info run as root: `sudo su`)
-	$(info create the disk layout)
 	$(disko) -- -m create $(conf)
-	$(info mount the disk layout)
 	$(disko) -- -m mount $(conf)
 	mount | grep btrfs
 
 memory := 8192
-mount_point_swap := /mnt/swap
-_swapfile := $(mount_point_swap)/swapfile
+_swapfile := /mnt/swap/swapfile
 swap:
-	# >= 6.1: btrfs filesystem mkswapfile $(swapfile)
+	# >= 6.1: btrfs filesystem mkswapfile $(_swapfile)
 	# prior:
-	truncate -s 0 $(swapfile)
-	chattr +C $(swapfile)
-	btrfs property set $(swapfile) compression none
-	dd if=/dev/zero of=$(swapfile) bs=1M count=$(memory)
-	chmod 0600 $(swapfile)
-	mkswap $(swapfile)
+	truncate -s 0 $(_swapfile)
+	chattr +C $(_swapfile)
+	btrfs property set $(_swapfile) compression none
+	dd if=/dev/zero of=$(_swapfile) bs=1M count=$(memory)
+	chmod 0600 $(_swapfile)
+	mkswap $(_swapfile)
 
 hiberation:
 	# >= 6.1: btrfs inspect-internal map-swapfile swapfile
 
 mount_point_root := /mnt
-mount_point_boot := /mnt/boot
 config-hw:
 	nixos-generate-config --root $(mount_point_root)
-	mkdir $(mount_point_boot)/efi
 
 host ?= x230
 build:
