@@ -100,6 +100,7 @@
     curl
     git
     zsh
+    gnome-browser-connector # support for gnome extensions
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
