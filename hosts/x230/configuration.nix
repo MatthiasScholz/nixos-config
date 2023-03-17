@@ -7,9 +7,16 @@
 {
   imports =
     [ # Include the results of the hardware scan.
+      # Add device specific hardware support
+      # - https://github.com/NixOS/nixos-hardware/tree/master
+      # - https://github.com/NixOS/nixos-hardware/blob/master/lenovo/thinkpad/x230/default.nix
+      # NOTE: Add additional channel
+      # $ sudo nix-channel --add https://github.com/NixOS/nixos-hardware/archive/master.tar.gz nixos-hardware
+      # $ sudo nix-channel --update
+      nixos-hardware/lenovo/thinkpad/x230
       ./hardware-configuration.nix
     ];
-
+  
   # General Nix behavior
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
