@@ -26,7 +26,9 @@
     darwinConfigurations."MacPro" = darwin.lib.darwinSystem {
     # you can have multiple darwinConfigurations per flake, one per hostname
       system = "x86_64-darwin";
-      modules = [ home-manager.darwinModules.home-manager ./hosts/MacPro/default.nix]; # will be important later
+      # FIXME make host dependent
+      #modules = [ home-manager.darwinModules.home-manager ./hosts/MacPro/default.nix]; # will be important later
+      modules = [ home-manager.darwinModules.home-manager ./hosts/MacTW/default.nix]; # will be important later
     };
 
 

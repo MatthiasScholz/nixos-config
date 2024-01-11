@@ -1,4 +1,5 @@
-host ?= MacPro
+#host ?= MacPro
+host ?= MacTW
 pull:
 	git pull
 
@@ -19,4 +20,4 @@ setup-prerequistes:
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 setup: build darwin-prepare darwin-rebuild
-upgrade: pull build darwin-rebuild 
+upgrade: pull build darwin-rebuild
